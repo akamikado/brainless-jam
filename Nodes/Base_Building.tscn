@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c2ovg5ab0reaq"]
+
+[ext_resource type="Script" uid="uid://cmnuo6lkqh128" path="res://Scripts/Building_Script.gd" id="1_hbnt5"]
+[ext_resource type="Texture2D" uid="uid://ccjb8eq1bmglk" path="res://Assets/Buildings/ant-hatchery.png" id="2_l1l1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thl5k"]
+size = Vector2(17.287266, 20)
+
+[node name="Node2D" type="Node2D" unique_id=407573961]
+script = ExtResource("1_hbnt5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1687190031]
+texture_filter = 1
+texture = ExtResource("2_l1l1t")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1771515322]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2133936598]
+position = Vector2(0, 34)
+scale = Vector2(4.158214, 1.4417465)
+shape = SubResource("RectangleShape2D_thl5k")
