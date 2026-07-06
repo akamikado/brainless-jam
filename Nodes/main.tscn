@@ -1,8 +1,27 @@
 [gd_scene format=3 uid="uid://nhvv4snb6iob"]
 
-[ext_resource type="PackedScene" uid="uid://bg0l5x48goddo" path="res://Nodes/tile_map.tscn" id="1_awkkk"]
+[ext_resource type="Script" uid="uid://ddknc6egt8rx0" path="res://Scripts/main.gd" id="2_cfxlj"]
+[ext_resource type="PackedScene" uid="uid://d2njt56wd8teh" path="res://Nodes/building_selection_area.tscn" id="2_h2ymo"]
+[ext_resource type="PackedScene" uid="uid://cgcubbantnypg" path="res://Nodes/map.tscn" id="3_cfxlj"]
+[ext_resource type="Script" uid="uid://etbcgscfypr5" path="res://Scripts/selected_building.gd" id="4_uxqe4"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_2hvdc"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
+script = ExtResource("2_cfxlj")
+metadata/_edit_group_ = true
 
-[node name="TileMapLayer" parent="." unique_id=2040250382 instance=ExtResource("1_awkkk")]
-position = Vector2(-263, -44)
+[node name="Map" parent="." unique_id=826473319 instance=ExtResource("3_cfxlj")]
+position = Vector2(24, 163)
+scale = Vector2(1.3, 1.3)
+
+[node name="BuildingSelectionArea" parent="." unique_id=1568335877 instance=ExtResource("2_h2ymo")]
+position = Vector2(1629, 203.00002)
+scale = Vector2(1.5885239, 1.3802143)
+
+[node name="SelectedBuilding" type="Sprite2D" parent="." unique_id=1101072205]
+texture = SubResource("ImageTexture_2hvdc")
+script = ExtResource("4_uxqe4")
+
+[connection signal="selected_building" from="BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
+[connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building" binds= [Vector2i(0, 0)]]

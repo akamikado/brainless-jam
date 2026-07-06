@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d2njt56wd8teh"]
+
+[ext_resource type="Script" uid="uid://dsmcijgwbml0a" path="res://Scripts/building_selection_area.gd" id="1_eew2j"]
+[ext_resource type="PackedScene" uid="uid://c2ovg5ab0reaq" path="res://Nodes/building_select_button.tscn" id="2_cghn4"]
+[ext_resource type="Texture2D" uid="uid://ccjb8eq1bmglk" path="res://Assets/Buildings/ant-hatchery.png" id="3_jpetf"]
+
+[node name="BuildingSelectionArea" type="Node2D" unique_id=1568335877]
+script = ExtResource("1_eew2j")
+metadata/_edit_group_ = true
+
+[node name="AntHatchery" parent="." unique_id=679507329 instance=ExtResource("2_cghn4")]
+offset_transform_position = Vector2(0, 0)
+toggle_mode = true
+texture_normal = ExtResource("3_jpetf")
+building_type = "ant_hatchery"
+
+[connection signal="selected" from="AntHatchery" to="." method="_on_ant_hatchery_selected"]

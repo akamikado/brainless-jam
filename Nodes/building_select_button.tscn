@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c2ovg5ab0reaq"]
+
+[ext_resource type="Script" uid="uid://cmnuo6lkqh128" path="res://Scripts/building_select_button.gd" id="2_rk4vg"]
+
+[node name="BuildingSelectButton" type="TextureButton" unique_id=1643222114]
+texture_filter = 1
+scale = Vector2(0.6848528, 0.5735834)
+offset_transform_position = Vector2(-190, 0)
+script = ExtResource("2_rk4vg")
+metadata/_edit_group_ = true
