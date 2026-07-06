@@ -24,4 +24,4 @@ texture = SubResource("ImageTexture_2hvdc")
 script = ExtResource("4_uxqe4")
 
 [connection signal="selected_building" from="BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
-[connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building" binds= [Vector2i(0, 0)]]
+[connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building"]

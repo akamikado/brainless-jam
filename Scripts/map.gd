@@ -1,7 +1,5 @@
 extends Node2D
 
-var buildings: Array[Sprite2D]
-
 func _ready() -> void:
 	pass
 
@@ -9,7 +7,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_selected_building_place_building(position: Vector2i) -> void:
-	#TODO: add position and texture somehow
-	buildings.append(Sprite2D.new())
+func _on_selected_building_place_building(building_position: Vector2) -> void:
+	var new = preload("res://Nodes/building_base.tscn")
+	var node = new.instantiate()
+	(node as Node2D).global_position = building_position
+	add_child(node)
