@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dv4ouyl3g4y1q"]
 
-[ext_resource type="Texture2D" uid="uid://ccjb8eq1bmglk" path="res://Assets/Buildings/ant-hatchery.png" id="1_7yitx"]
-[ext_resource type="Script" uid="uid://o2fri7xhtmx3" path="res://Scripts/building_base.gd" id="1_t8nav"]
+[ext_resource type="Script" uid="uid://o2fri7xhtmx3" path="res://Scripts/building_base.gd" id="1_ni5r4"]
+[ext_resource type="Texture2D" uid="uid://ccjb8eq1bmglk" path="res://Assets/Buildings/ant-hatchery.png" id="2_8ovb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thl5k"]
 size = Vector2(71, 23)
 
 [node name="Building" type="Node2D" unique_id=1441197407]
-script = ExtResource("1_t8nav")
+script = ExtResource("1_ni5r4")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1210385499]
 
@@ -16,6 +16,7 @@ position = Vector2(0.5, 31.5)
 shape = SubResource("RectangleShape2D_thl5k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1993258573]
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(1, -5)
-texture = ExtResource("1_7yitx")
+texture = ExtResource("2_8ovb0")

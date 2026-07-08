@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d2wxxospa31x8" path="res://Scripts/map.gd" id="2_87ea5"]
 
 [node name="Map" type="Node2D" unique_id=826473319]
+position = Vector2(5, 119)
 script = ExtResource("2_87ea5")
 metadata/_edit_group_ = true
 

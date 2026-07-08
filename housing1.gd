@@ -1,5 +1,4 @@
-extends Node2D
-
+extends "res://Scripts/building_base.gd"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,16 +8,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func on_placed() -> void:
-	print_debug("Placed")
 	Global.add_housing(25)
 	pass
 
 func update_building() -> void:
-	pass
-
-
-func nearby_building_placed() -> void:
+	
 	pass

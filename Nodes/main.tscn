@@ -4,10 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://d2njt56wd8teh" path="res://Nodes/building_selection_area.tscn" id="2_h2ymo"]
 [ext_resource type="PackedScene" uid="uid://cgcubbantnypg" path="res://Nodes/map.tscn" id="3_cfxlj"]
 [ext_resource type="Script" uid="uid://etbcgscfypr5" path="res://Scripts/selected_building.gd" id="4_uxqe4"]
+[ext_resource type="Texture2D" uid="uid://861c1oqi7cij" path="res://Assets/Buildings/buildings-tileset.png" id="5_r680b"]
+[ext_resource type="PackedScene" uid="uid://cbg38qaydqskm" path="res://Nodes/UI/total_housing_text.tscn" id="6_3cenx"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_2hvdc"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
+position = Vector2(-8, 85)
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
 
@@ -22,6 +25,14 @@ scale = Vector2(2, 2)
 [node name="SelectedBuilding" type="Sprite2D" parent="." unique_id=1101072205]
 texture = SubResource("ImageTexture_2hvdc")
 script = ExtResource("4_uxqe4")
+
+[node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
+position = Vector2(368, 221)
+scale = Vector2(2.28125, 2.28125)
+texture = ExtResource("5_r680b")
+
+[node name="Node2D" parent="." unique_id=370522547 instance=ExtResource("6_3cenx")]
+position = Vector2(1633, 358)
 
 [connection signal="selected_building" from="BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
 [connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building"]
