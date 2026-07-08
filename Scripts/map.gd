@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 
 func _on_selected_building_place_building(building_position: Vector2) -> void:
 	var new = preload("res://Nodes/building_base.tscn")
-	var node = new.instantiate()
-	(node as Node2D).global_position = building_position
+	var node = new.instantiate() as Node2D
+	node.global_position = to_local(building_position)
+	node.scale = Vector2(1, 1)
 	add_child(node)

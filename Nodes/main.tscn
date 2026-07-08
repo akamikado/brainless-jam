@@ -17,7 +17,7 @@ scale = Vector2(1.3, 1.3)
 
 [node name="BuildingSelectionArea" parent="." unique_id=1568335877 instance=ExtResource("2_h2ymo")]
 position = Vector2(1629, 203.00002)
-scale = Vector2(1.5885239, 1.3802143)
+scale = Vector2(2, 2)
 
 [node name="SelectedBuilding" type="Sprite2D" parent="." unique_id=1101072205]
 texture = SubResource("ImageTexture_2hvdc")
