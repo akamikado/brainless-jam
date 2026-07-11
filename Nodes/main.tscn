@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://861c1oqi7cij" path="res://Assets/Buildings/buildings-tileset.png" id="5_r680b"]
 [ext_resource type="PackedScene" uid="uid://cbg38qaydqskm" path="res://Nodes/UI/total_housing_text.tscn" id="6_3cenx"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_2hvdc"]
-
 [node name="Main" type="Node2D" unique_id=197731329]
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
@@ -22,7 +20,6 @@ position = Vector2(1629, 203.00002)
 scale = Vector2(2, 2)
 
 [node name="SelectedBuilding" type="Sprite2D" parent="." unique_id=1101072205]
-texture = SubResource("ImageTexture_2hvdc")
 script = ExtResource("4_uxqe4")
 
 [node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]

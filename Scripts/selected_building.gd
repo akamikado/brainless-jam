@@ -18,7 +18,6 @@ func _process(_delta: float) -> void:
 func _on_building_selection_area_selected_building(type: String) -> void:
 	if type == "hidden":
 		visible = false
-		print("hidden")
 	elif type == "ant_hatchery":
 		visible = true
 		texture = ant_hatchery_texture
