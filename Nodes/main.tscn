@@ -10,7 +10,6 @@
 [sub_resource type="ImageTexture" id="ImageTexture_2hvdc"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
-position = Vector2(-8, 85)
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
 
