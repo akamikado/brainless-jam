@@ -27,6 +27,7 @@ texture = SubResource("ImageTexture_2hvdc")
 script = ExtResource("4_uxqe4")
 
 [node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
+texture_filter = 1
 position = Vector2(368, 221)
 scale = Vector2(2.28125, 2.28125)
 texture = ExtResource("5_r680b")
