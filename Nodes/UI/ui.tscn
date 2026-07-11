@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://xssl1jnx80a1"]
+
+[ext_resource type="Texture2D" uid="uid://bt2g842d4pwam" path="res://Assets/UI/Panels/Sprite-0001.png" id="1_5sunl"]
+[ext_resource type="Texture2D" uid="uid://cejeffymkfldb" path="res://Assets/UI/Icons/nectar-icon.png" id="2_a3fe5"]
+[ext_resource type="FontFile" uid="uid://d37xvjrk7hjgq" path="res://Assets/UI/Fonts/Porto_Buena.otf" id="3_a3fe5"]
+[ext_resource type="Texture2D" uid="uid://cfb8dd2dt6snc" path="res://Assets/UI/Icons/worker-icon.png" id="3_k07sq"]
+[ext_resource type="Texture2D" uid="uid://cwy5cidgaufqr" path="res://Assets/UI/Icons/stick-icon.png" id="4_3y5nc"]
+[ext_resource type="Texture2D" uid="uid://xm0iplp8fk3e" path="res://Assets/UI/Icons/silk-icon.png" id="5_e5wpx"]
+[ext_resource type="Texture2D" uid="uid://bln0r3tst7fgo" path="res://Assets/UI/Icons/pebble-icon.png" id="6_w8fj1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gih7u"]
+font = ExtResource("3_a3fe5")
+font_size = 13
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+shadow_size = 0
+
+[node name="UI" type="Control" unique_id=1987384061]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 11.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopPanel" type="NinePatchRect" parent="." unique_id=1411019703]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -815.99994
+offset_right = -520.39996
+offset_bottom = 17.199999
+grow_horizontal = 2
+scale = Vector2(5, 5)
+texture = ExtResource("1_5sunl")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Ant" type="HBoxContainer" parent="TopPanel" unique_id=2071743864]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -56.88997
+offset_top = -6.4999995
+offset_right = -4.8898315
+offset_bottom = 6.499999
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="TopPanel/Ant" unique_id=1867465942]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_k07sq")
+expand_mode = 3
+
+[node name="Text" type="Label" parent="TopPanel/Ant" unique_id=2082931303]
+layout_mode = 2
+text = "42/999"
+label_settings = SubResource("LabelSettings_gih7u")
+
+[node name="Container" type="HBoxContainer" parent="TopPanel" unique_id=1113086394]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.9999866
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nectar" type="HBoxContainer" parent="TopPanel/Container" unique_id=343446869]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="TopPanel/Container/Nectar" unique_id=692701762]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_a3fe5")
+expand_mode = 3
+
+[node name="Text" type="Label" parent="TopPanel/Container/Nectar" unique_id=49786491]
+layout_mode = 2
+text = "42"
+label_settings = SubResource("LabelSettings_gih7u")
+
+[node name="Stick" type="HBoxContainer" parent="TopPanel/Container" unique_id=90506528]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="TopPanel/Container/Stick" unique_id=1770148938]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_3y5nc")
+expand_mode = 3
+
+[node name="Text" type="Label" parent="TopPanel/Container/Stick" unique_id=1878727]
+layout_mode = 2
+text = "42"
+label_settings = SubResource("LabelSettings_gih7u")
+
+[node name="Silk" type="HBoxContainer" parent="TopPanel/Container" unique_id=182955716]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="TopPanel/Container/Silk" unique_id=1569396630]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_e5wpx")
+expand_mode = 3
+
+[node name="Text" type="Label" parent="TopPanel/Container/Silk" unique_id=70069366]
+layout_mode = 2
+text = "42"
+label_settings = SubResource("LabelSettings_gih7u")
+
+[node name="Pebble" type="HBoxContainer" parent="TopPanel/Container" unique_id=927448379]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="TopPanel/Container/Pebble" unique_id=285153694]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("6_w8fj1")
+expand_mode = 3
+
+[node name="Text" type="Label" parent="TopPanel/Container/Pebble" unique_id=1582393188]
+layout_mode = 2
+text = "42"
+label_settings = SubResource("LabelSettings_gih7u")
