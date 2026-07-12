@@ -12,6 +12,5 @@ metadata/_edit_group_ = true
 offset_transform_position = Vector2(0, 0)
 toggle_mode = true
 texture_normal = ExtResource("3_jpetf")
-building_type = "ant_hatchery"
 
 [connection signal="selected" from="AntHatchery" to="." method="_on_ant_hatchery_selected"]

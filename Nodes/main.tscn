@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cgcubbantnypg" path="res://Nodes/map.tscn" id="3_cfxlj"]
 [ext_resource type="Script" uid="uid://etbcgscfypr5" path="res://Scripts/selected_building.gd" id="4_uxqe4"]
 [ext_resource type="Texture2D" uid="uid://861c1oqi7cij" path="res://Assets/Buildings/buildings-tileset.png" id="5_r680b"]
-[ext_resource type="PackedScene" uid="uid://dpd7181jvetxr" path="res://Nodes/UI/gameplay-ui.tscn" id="6_3cenx"]
-[ext_resource type="Script" uid="uid://d1v4k2yawop8o" path="res://Nodes/camera-controls.gd" id="7_ye5tp"]
-[ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Nodes/building_manager.gd" id="8_ws7ns"]
+[ext_resource type="PackedScene" uid="uid://cbg38qaydqskm" path="res://Nodes/UI/variable_text.tscn" id="6_3cenx"]
+[ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="7_ye5tp"]
+[ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
 position = Vector2(-301, -56)
@@ -21,16 +21,12 @@ position = Vector2(24, 163)
 position = Vector2(100, 203)
 scale = Vector2(2, 2)
 
-[node name="SelectedBuilding" type="Sprite2D" parent="." unique_id=1101072205]
-script = ExtResource("4_uxqe4")
-
 [node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
 texture_filter = 1
 position = Vector2(368, 221)
 texture = ExtResource("5_r680b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=156765559]
-script = ExtResource("7_ye5tp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981370967]
 
@@ -38,6 +34,9 @@ script = ExtResource("7_ye5tp")
 
 [node name="Buildings" type="Node" parent="." unique_id=2055413477]
 script = ExtResource("8_ws7ns")
+
+[node name="SelectedBuilding" parent="." unique_id=1441197407 instance=ExtResource("7_ye5tp")]
+script = ExtResource("4_uxqe4")
 
 [connection signal="selected_building" from="BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
 [connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building"]
