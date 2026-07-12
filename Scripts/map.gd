@@ -1,12 +1,5 @@
 extends Node2D
 
-func _ready() -> void:
-	pass
-
-
-func _process(delta: float) -> void:
-	pass
-
 func _on_selected_building_place_building(building_position: Vector2) -> void:
 	var new = preload("res://Nodes/Buildings/building_base.tscn")
 	var node = new.instantiate() as Node2D

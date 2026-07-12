@@ -9,8 +9,6 @@
 [ext_resource type="Script" uid="uid://d1v4k2yawop8o" path="res://Nodes/camera-controls.gd" id="7_ye5tp"]
 [ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Nodes/building_manager.gd" id="8_ws7ns"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_2hvdc"]
-
 [node name="Main" type="Node2D" unique_id=197731329]
 position = Vector2(-301, -56)
 script = ExtResource("2_cfxlj")
@@ -24,7 +22,6 @@ position = Vector2(100, 203)
 scale = Vector2(2, 2)
 
 [node name="SelectedBuilding" type="Sprite2D" parent="." unique_id=1101072205]
-texture = SubResource("ImageTexture_2hvdc")
 script = ExtResource("4_uxqe4")
 
 [node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
