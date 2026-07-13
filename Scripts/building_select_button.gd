@@ -5,6 +5,6 @@ signal selected
 
 func _toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		selected.emit(Global.HousingType.ANT_HATCHERY)
+		selected.emit(building_type)
 	else:
 		selected.emit(Global.HousingType.NONE)

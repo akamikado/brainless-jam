@@ -1,6 +1,6 @@
 extends Node
 
-enum HousingType { NONE, ANT_HATCHERY, }
+enum HousingType { NONE, ANT_HATCHERY, NECTAR_GARDEN, SILK_WEAVER, STICK_YARD, PEBBLE_QUARRY, HOUSING_SMALL }
 
 var citizens_total: int = 0
 var citizens_assigned: int = 0
@@ -14,6 +14,24 @@ var food: int = 0
 var silk: int = 0
 var sticks: int = 0
 var pebbles: int = 0
+
+func get_housing_texture_for_type(type: HousingType) -> String:
+	match type:
+		HousingType.ANT_HATCHERY:
+			return "res://Assets/Buildings/ant-hatchery.png"
+		HousingType.NECTAR_GARDEN:
+			return "res://Assets/Buildings/nectar-building.png"
+	
+	return ""
+
+func get_housing_scene_for_type(type: HousingType) -> String:
+	match type:
+		HousingType.ANT_HATCHERY:
+			return "res://Nodes/Buildings/building_base.tscn"
+		HousingType.NECTAR_GARDEN:
+			return "res://Assets/Buildings/nectar_building.tscn"
+	
+	return ""
 
 # Returns the amount of citizens that couldn't be added, e.g. 0 if all, x if full
 func add_citizens(count: int) -> bool:
