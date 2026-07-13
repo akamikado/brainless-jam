@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dsmcijgwbml0a" path="res://Scripts/building_selection_area.gd" id="1_eew2j"]
 [ext_resource type="PackedScene" uid="uid://c2ovg5ab0reaq" path="res://Nodes/building_select_button.tscn" id="2_cghn4"]
 [ext_resource type="Texture2D" uid="uid://carm4wbtcye53" path="res://Assets/Buildings/nectar-building.png" id="3_ieb2v"]
+[ext_resource type="Texture2D" uid="uid://c23xpheiintxx" path="res://Assets/Buildings/silk-building.png" id="4_jsf6t"]
 
 [node name="BuildingSelectionArea" type="Node2D" unique_id=1568335877]
 script = ExtResource("1_eew2j")
@@ -14,4 +15,14 @@ toggle_mode = true
 texture_normal = ExtResource("3_ieb2v")
 building_type = 2
 
+[node name="SilkWeaver" parent="." unique_id=1643222114 instance=ExtResource("2_cghn4")]
+offset_top = 32.999996
+offset_right = 48.0
+offset_bottom = 81.0
+offset_transform_position = Vector2(0, 0)
+toggle_mode = true
+texture_normal = ExtResource("4_jsf6t")
+building_type = 2
+
 [connection signal="selected" from="NectarGarden" to="." method="_on_building_select_button_toggled"]
+[connection signal="selected" from="SilkWeaver" to="." method="_on_building_select_button_toggled"]

@@ -29,7 +29,7 @@ func get_housing_scene_for_type(type: HousingType) -> String:
 		HousingType.ANT_HATCHERY:
 			return "res://Nodes/Buildings/building_base.tscn"
 		HousingType.NECTAR_GARDEN:
-			return "res://Assets/Buildings/nectar_building.tscn"
+			return "res://Nodes/Buildings/nectar_building.tscn"
 	
 	return ""
 
