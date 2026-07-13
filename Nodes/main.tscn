@@ -17,10 +17,6 @@ metadata/_edit_group_ = true
 [node name="Map" parent="." unique_id=826473319 instance=ExtResource("3_cfxlj")]
 position = Vector2(24, 163)
 
-[node name="BuildingSelectionArea" parent="." unique_id=1568335877 instance=ExtResource("2_h2ymo")]
-position = Vector2(100, 203)
-scale = Vector2(2, 2)
-
 [node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
 texture_filter = 1
 position = Vector2(368, 221)
@@ -38,11 +34,15 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
+position = Vector2(225, 50)
+scale = Vector2(0.8, 0.8)
+
 [node name="Buildings" type="Node" parent="." unique_id=2055413477]
 script = ExtResource("8_ws7ns")
 
 [node name="SelectedBuilding" parent="." unique_id=1441197407 instance=ExtResource("7_ye5tp")]
 script = ExtResource("4_uxqe4")
 
-[connection signal="selected_building" from="BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
+[connection signal="selected_building" from="CanvasLayer/BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
 [connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building"]
