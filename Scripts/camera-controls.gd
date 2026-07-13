@@ -23,7 +23,7 @@ func _input(event):
 		match event.button_index:
 			MOUSE_BUTTON_WHEEL_UP:
 				camera_speed = max(3, camera_speed - 5)
-        var zoom_pos = get_global_mouse_position()
+				var zoom_pos = get_global_mouse_position()
 				zoom_at(zoom_pos, zoom.x * 1.2)
 			MOUSE_BUTTON_WHEEL_DOWN:
 				camera_speed += 5
