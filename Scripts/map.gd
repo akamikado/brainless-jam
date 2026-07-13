@@ -2,6 +2,7 @@ extends Node2D
 
 @export var buildings: Array[Node2D]
 
+
 func _on_selected_building_place_building(building_position: Vector2) -> void:
 	var new = preload("res://Nodes/Buildings/building_base.tscn")
 	var node = new.instantiate() as Node2D

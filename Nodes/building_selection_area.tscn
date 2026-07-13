@@ -2,15 +2,48 @@
 
 [ext_resource type="Script" uid="uid://dsmcijgwbml0a" path="res://Scripts/building_selection_area.gd" id="1_eew2j"]
 [ext_resource type="PackedScene" uid="uid://c2ovg5ab0reaq" path="res://Nodes/building_select_button.tscn" id="2_cghn4"]
-[ext_resource type="Texture2D" uid="uid://ccjb8eq1bmglk" path="res://Assets/Buildings/ant-hatchery.png" id="3_jpetf"]
+[ext_resource type="Texture2D" uid="uid://carm4wbtcye53" path="res://Assets/Buildings/nectar-building.png" id="3_ieb2v"]
+[ext_resource type="Texture2D" uid="uid://c23xpheiintxx" path="res://Assets/Buildings/silk-building.png" id="4_jsf6t"]
+[ext_resource type="Texture2D" uid="uid://c732afrkcb80q" path="res://Assets/Buildings/stick-building.png" id="5_pyc1g"]
+[ext_resource type="Texture2D" uid="uid://b43jfn5ynaklh" path="res://Assets/Buildings/pebble-building.png" id="6_ubbml"]
+[ext_resource type="Texture2D" uid="uid://dslqgmlrun3c1" path="res://Assets/Buildings/house-small.png" id="7_k70ug"]
 
 [node name="BuildingSelectionArea" type="Node2D" unique_id=1568335877]
 script = ExtResource("1_eew2j")
 metadata/_edit_group_ = true
 
-[node name="AntHatchery" parent="." unique_id=679507329 instance=ExtResource("2_cghn4")]
-offset_transform_position = Vector2(0, 0)
-toggle_mode = true
-texture_normal = ExtResource("3_jpetf")
+[node name="NectarGarden" parent="." unique_id=1643222114 instance=ExtResource("2_cghn4")]
+offset_right = 48.0
+offset_bottom = 48.0
+texture_normal = ExtResource("3_ieb2v")
+building_type = 2
 
-[connection signal="selected" from="AntHatchery" to="." method="_on_building_select_button_toggled"]
+[node name="SilkWeaver" parent="." unique_id=1419149228 instance=ExtResource("2_cghn4")]
+offset_top = 32.0
+offset_right = 48.0
+offset_bottom = 80.0
+texture_normal = ExtResource("4_jsf6t")
+building_type = 3
+
+[node name="StickYard" parent="." unique_id=1086461291 instance=ExtResource("2_cghn4")]
+offset_top = 64.0
+offset_right = 48.0
+offset_bottom = 112.0
+texture_normal = ExtResource("5_pyc1g")
+building_type = 4
+
+[node name="PebbleQuarry" parent="." unique_id=1999778131 instance=ExtResource("2_cghn4")]
+offset_top = 96.0
+offset_right = 48.0
+offset_bottom = 144.0
+texture_normal = ExtResource("6_ubbml")
+building_type = 5
+
+[node name="HousingBuilding" parent="." unique_id=1678077357 instance=ExtResource("2_cghn4")]
+offset_top = 128.0
+offset_right = 48.0
+offset_bottom = 176.0
+texture_normal = ExtResource("7_k70ug")
+building_type = 6
+
+[connection signal="selected" from="NectarGarden" to="." method="_on_building_select_button_toggled"]

@@ -3,6 +3,11 @@ extends Node2D
 signal place_building
 
 var ant_hatchery_texture = load("res://Assets/Buildings/ant-hatchery.png")
+var nectar_garden_texture = load("res://Assets/Buildings/house-small.png")
+#var silk_weaver_texture
+#var stick_yard_texture
+#var pebble_quarry_texture
+#var housing_small_texture
 
 @onready var area = $Area2D
 @onready var area_shape = $Area2D/CollisionShape2D
@@ -42,8 +47,14 @@ func _process(_delta: float) -> void:
 		$Sprite2D.modulate = Color(1, 1, 1, 0.5)
 
 func _on_building_selection_area_selected_building(type: Global.HousingType) -> void:
+	print_debug(type)
 	if type == Global.HousingType.NONE:
 		$Sprite2D.visible = false
 	elif type == Global.HousingType.ANT_HATCHERY:
 		$Sprite2D.visible = true
 		$Sprite2D.texture = ant_hatchery_texture
+	elif type == Global.HousingType.NECTAR_GARDEN:
+		
+		$Sprite2D.visible = true
+		$Sprite2D.texture = nectar_garden_texture
+	

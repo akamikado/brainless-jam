@@ -1,6 +1,6 @@
 extends Node
 
-enum HousingType { NONE, ANT_HATCHERY, }
+enum HousingType { NONE, ANT_HATCHERY, NECTAR_GARDEN, SILK_WEAVER, STICK_YARD, PEBBLE_QUARRY, HOUSING_SMALL }
 
 var citizens_total: int = 0
 var citizens_assigned: int = 0
