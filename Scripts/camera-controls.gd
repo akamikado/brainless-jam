@@ -1,7 +1,6 @@
 extends Camera2D
 
 @export var camera_speed = 3
-@export var zoom_speed = 0.2
 
 func _ready() -> void:
 	pass
@@ -24,7 +23,16 @@ func _input(event):
 		match event.button_index:
 			MOUSE_BUTTON_WHEEL_UP:
 				camera_speed = max(3, camera_speed - 5)
-				zoom += Vector2(zoom_speed, zoom_speed)
+        var zoom_pos = get_global_mouse_position()
+				zoom_at(zoom_pos, zoom.x * 1.2)
 			MOUSE_BUTTON_WHEEL_DOWN:
 				camera_speed += 5
-				zoom -= Vector2(zoom_speed, zoom_speed)
+				var zoom_pos = get_global_mouse_position()
+				zoom_at(zoom_pos, zoom.x * 0.8)
+
+
+func zoom_at(pos: Vector2, scale: float) -> void:
+	zoom.x = scale
+	zoom.y = scale
+	var movement = pos - get_global_mouse_position()
+	offset += movement
