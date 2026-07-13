@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://d2njt56wd8teh" path="res://Nodes/building_selection_area.tscn" id="2_h2ymo"]
 [ext_resource type="PackedScene" uid="uid://cgcubbantnypg" path="res://Nodes/map.tscn" id="3_cfxlj"]
 [ext_resource type="Script" uid="uid://etbcgscfypr5" path="res://Scripts/selected_building.gd" id="4_uxqe4"]
+[ext_resource type="Script" uid="uid://d1v4k2yawop8o" path="res://Scripts/camera-controls.gd" id="5_c08q2"]
 [ext_resource type="Texture2D" uid="uid://861c1oqi7cij" path="res://Assets/Buildings/buildings-tileset.png" id="5_r680b"]
 [ext_resource type="PackedScene" uid="uid://cbg38qaydqskm" path="res://Nodes/UI/variable_text.tscn" id="6_3cenx"]
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="7_ye5tp"]
 [ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
-position = Vector2(-301, -56)
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
 
@@ -27,6 +27,7 @@ position = Vector2(368, 221)
 texture = ExtResource("5_r680b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=156765559]
+script = ExtResource("5_c08q2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981370967]
 
