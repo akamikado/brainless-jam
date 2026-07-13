@@ -3,6 +3,8 @@ extends Camera2D
 @export var camera_speed = 3
 
 func _ready() -> void:
+	position = Vector2(650,800)
+	zoom = Vector2(0.5, 0.5)
 	pass
 
 func _process(delta: float) -> void:
