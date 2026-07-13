@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hatpbceatfho"]
 
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="1_k25ix"]
-[ext_resource type="Script" uid="uid://6xoohrqyy82v" path="res://housing1.gd" id="2_kjxr7"]
+[ext_resource type="Script" uid="uid://6xoohrqyy82v" path="res://Scripts/housing1.gd" id="2_kjxr7"]
 [ext_resource type="Texture2D" uid="uid://cdbts634fsate" path="res://Assets/Buildings/housing-1.png" id="3_ffsyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulgx8"]

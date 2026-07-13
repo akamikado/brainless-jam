@@ -1,5 +1,7 @@
 extends Node
 
+enum HousingType { NONE, ANT_HATCHERY, }
+
 var citizens_total: int = 0
 var citizens_assigned: int = 0
 var citizens_unassigned: int = 0
