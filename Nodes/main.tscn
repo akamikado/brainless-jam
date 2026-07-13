@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
-position = Vector2(-205, -21)
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
 

@@ -2,5 +2,8 @@ extends Node2D
 
 signal selected_building
 
-func _on_ant_hatchery_selected(type: Global.HousingType) -> void:
-	selected_building.emit(type)
+var building = Global.HousingType.NONE
+
+func _on_building_select_button_toggled(type: Global.HousingType) -> void:
+	building = type
+	selected_building.emit(building)
