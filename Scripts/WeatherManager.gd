@@ -1,48 +1,69 @@
 extends Node
 
-var current_weather: String = "Clear"
-var next_weather: String = "Clear"
+# How long each weather cycle lasts
+@export var cycle_time: float = 60.0
 
-var weather_options = [
+# Current countdown value
+var timer: float = 0.0
+
+var current_cycle: int = 0
+
+var weather_cycle: Array[String] = [
 	"Clear",
 	"Rain",
 	"Drought",
 	"Wind",
-	"Cold",
-	"Predator Raid"
+	"Cold"
 ]
 
-func _ready():
-	roll_next_weather(1)
+var current_weather: String = ""
 
-func roll_next_weather(day: int):
-	current_weather = next_weather
-	next_weather = weather_options.pick_random()
+var game_finished: bool = false
 
-	print("Current Weather: ", current_weather)
-	print("Tomorrow's Weather: ", next_weather)
+
+func _ready() -> void:
+	# Init timer at 60 seconds
+	timer = cycle_time
+
+	# Set the first weather to Clear
+	current_weather = weather_cycle[current_cycle]
+
+	print("Cycle started: ", current_cycle + 1)
+	print("Current weather: ", current_weather)
 	
-func apply_current_weather(resource_manager):
-	if current_weather == "Clear":
-		print("Clear weather. No effect.")
+func _process(delta: float) -> void:
+	# Stop updating after the game has finished.
+	if game_finished:
+		return
 
-	elif current_weather == "Rain":
-		print("Rain: lose 2 sticks.")
-		resource_manager.remove_sticks(2)
+	# Count down using real elapsed time.
+	timer -= delta
 
-	elif current_weather == "Drought":
-		print("Drought: lose 2 food.")
-		resource_manager.remove_food(2)
+	# When the timer reaches zero, move to the next cycle.
+	if timer <= 0.0:
+		timer = 0.0
+		next_cycle()
 
-	elif current_weather == "Wind":
-		print("Wind: lose 1 silk and 1 stick.")
-		resource_manager.remove_silk(1)
-		resource_manager.remove_sticks(1)
 
-	elif current_weather == "Cold":
-		print("Cold: extra food required.")
-		resource_manager.remove_food(3)
+func next_cycle() -> void:
+	#put your resource quota check here.
+	#
+	# if not has_met_cycle_goal():
+	#     lose_game()
+	#     return
 
-	elif current_weather == "Predator Raid":
-		print("Predator Raid: lose 1 citizen.")
-		resource_manager.remove_citizens(1)
+	current_cycle += 1
+
+	if current_cycle >= weather_cycle.size():
+		#win_game()
+		return
+
+	# Reset the timer for the next cycle
+	timer = cycle_time
+
+	# Set the new weather using the current array position
+	current_weather = weather_cycle[current_cycle]
+
+	print("Cycle started: ", current_cycle + 1)
+	print("Current weather: ", current_weather)
+	
