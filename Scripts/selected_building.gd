@@ -11,6 +11,10 @@ var housing_type: Global.HousingType
 @onready var map = $"../Map"
 @onready var map_area_shape = $"../Map/Area2D/CollisionShape2D"
 
+# sounds
+@onready var place_sound: AudioStreamPlayer = $PlaceBuildingSound
+@onready var cant_place: AudioStreamPlayer = $CantPlace
+
 var overlapping_building_on_map = false
 
 func _ready() -> void:
@@ -18,7 +22,7 @@ func _ready() -> void:
 	$Sprite2D.self_modulate.a = 0.5
 
 func _input(event: InputEvent) -> void:
-	if $Sprite2D.visible and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+	if $Sprite2D.visible and event.is_action_pressed("mouse_left"):
 		var area_rect = Rect2(
 			area_shape.global_position - area_shape.shape.size / 2,
 			area_shape.shape.size
@@ -30,6 +34,10 @@ func _input(event: InputEvent) -> void:
 		
 		if map_rect.encloses(area_rect) and not overlapping_building_on_map:
 			place_building.emit(housing_type, global_position)
+			place_sound.play()
+		else:
+			cant_place.play()
+			
 		
 func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position().snapped(Vector2(16,16))
