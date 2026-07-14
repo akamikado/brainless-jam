@@ -39,8 +39,11 @@ script = ExtResource("5_c08q2")
 [node name="GameplayUi" parent="CanvasLayer" unique_id=660287611 instance=ExtResource("6_c08q2")]
 
 [node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
-position = Vector2(225, 50)
-scale = Vector2(0.8, 0.8)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 0
 
 [node name="Buildings" type="Node" parent="." unique_id=2055413477]
 script = ExtResource("8_ws7ns")
