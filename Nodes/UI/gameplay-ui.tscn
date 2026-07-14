@@ -15,50 +15,69 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopBanner" type="Sprite2D" parent="." unique_id=111356485]
-z_index = -1
-texture_filter = 1
-texture = ExtResource("2_hn4wr")
-centered = false
+[node name="Control" type="Control" parent="." unique_id=1293992010]
+anchors_preset = 0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 42.0
 
-[node name="Text" type="Node" parent="." unique_id=1515206085]
-
-[node name="Food Text" type="RichTextLabel" parent="Text" unique_id=986253165]
+[node name="Food Text" type="RichTextLabel" parent="Control" unique_id=986253165]
+z_index = 1
 texture_filter = 1
-offset_left = 17.0
+layout_mode = 0
+offset_left = 24.0
 offset_top = 4.0
-offset_right = 39.0
+offset_right = 46.0
 offset_bottom = 23.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/normal_font = ExtResource("2_tlpeg")
+text = "00"
 script = ExtResource("2_b0tf6")
 
-[node name="Sticks Text" type="RichTextLabel" parent="Text" unique_id=711503813]
+[node name="Sticks Text" type="RichTextLabel" parent="Control" unique_id=711503813]
+z_index = 1
 texture_filter = 1
-offset_left = 40.0
+layout_mode = 0
+offset_left = 57.0
 offset_top = 4.0
-offset_right = 62.0
+offset_right = 79.0
 offset_bottom = 23.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/normal_font = ExtResource("2_tlpeg")
+text = "00"
 script = ExtResource("3_hn4wr")
 
-[node name="Silk Text" type="RichTextLabel" parent="Text" unique_id=262342931]
+[node name="Silk Text" type="RichTextLabel" parent="Control" unique_id=262342931]
+z_index = 1
 texture_filter = 1
-offset_left = 64.0
+layout_mode = 0
+offset_left = 90.0
 offset_top = 4.0
-offset_right = 86.0
+offset_right = 112.0
 offset_bottom = 23.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/normal_font = ExtResource("2_tlpeg")
+text = "00"
 script = ExtResource("5_kh5ah")
 
-[node name="Pebbles Text" type="RichTextLabel" parent="Text" unique_id=932476340]
+[node name="Pebbles Text" type="RichTextLabel" parent="Control" unique_id=932476340]
+z_index = 1
 texture_filter = 1
-offset_left = 89.0
+layout_mode = 0
+offset_left = 130.0
 offset_top = 4.0
-offset_right = 111.0
+offset_right = 152.0
 offset_bottom = 23.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/normal_font = ExtResource("2_tlpeg")
+text = "00"
 script = ExtResource("6_sjs6l")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=541747682]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 21.98
+grow_horizontal = 2
+texture = ExtResource("2_hn4wr")
