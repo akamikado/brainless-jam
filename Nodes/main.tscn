@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="7_ye5tp"]
 [ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
 [ext_resource type="AudioStream" uid="uid://dd2lvtfudf3v0" path="res://Assets/Sounds/PlaceBuilding.mp3" id="10_ii7ua"]
-[ext_resource type="AudioStream" uid="uid://dcafvcw45qpys" path="res://Assets/Sounds/Theme.wav" id="10_xowla"]
 [ext_resource type="AudioStream" uid="uid://if73gl0h20vy" path="res://Assets/Sounds/CantPlace.mp3" id="11_kqcq1"]
+[ext_resource type="AudioStream" uid="uid://cmikogaawd1ql" path="res://Assets/Sounds/Theme.mp3" id="12_kqcq1"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
 script = ExtResource("2_cfxlj")
@@ -60,9 +60,10 @@ stream = ExtResource("10_ii7ua")
 stream = ExtResource("11_kqcq1")
 
 [node name="Theme" type="AudioStreamPlayer" parent="." unique_id=271650656]
-stream = ExtResource("10_xowla")
+stream = ExtResource("12_kqcq1")
 volume_db = -6.985
 autoplay = true
+parameters/looping = true
 
 [connection signal="selected_building" from="CanvasLayer/BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
 [connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building"]
