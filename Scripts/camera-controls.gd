@@ -11,11 +11,10 @@ func _process(delta: float) -> void:
 	
 	if keyboard_direction != Vector2.ZERO:
 		global_position = get_screen_center_position() + keyboard_direction.normalized() * keyboard_speed * delta
-		
 	if Input.is_action_pressed("mouse_right"):
 		if mouse_velocity != Vector2.ZERO:
 			global_position = get_screen_center_position() + mouse_velocity * mouse_speed
-			
+	
 	mouse_velocity = Vector2.ZERO
 
 
