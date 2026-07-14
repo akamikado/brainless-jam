@@ -15,7 +15,6 @@ script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
 
 [node name="Map" parent="." unique_id=826473319 instance=ExtResource("3_cfxlj")]
-position = Vector2(24, 163)
 
 [node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
 texture_filter = 1
@@ -23,6 +22,11 @@ position = Vector2(368, 221)
 texture = ExtResource("5_r680b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=156765559]
+limit_left = -100
+limit_top = -100
+limit_right = 1300
+limit_bottom = 1300
+editor_draw_limits = true
 script = ExtResource("5_c08q2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981370967]
