@@ -36,7 +36,7 @@ grow_vertical = 1
 
 [node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
 position = Vector2(225, 50)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.8, 1.8)
 
 [node name="Buildings" type="Node" parent="." unique_id=2055413477]
 script = ExtResource("8_ws7ns")

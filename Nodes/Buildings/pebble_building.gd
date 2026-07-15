@@ -3,8 +3,11 @@ extends Base
 
 # Called when the node enters the scene tree for the first time.
 func on_placed() -> void:
-	print_debug("Placed")
-	print_debug("Added citizens")
-	Global.add_housing(4)
-	Global.add_citizens(4)
+	pass
+
+func update_building() -> void:
+	Global.add_pebbles(1)
+	pass
+
+func nearby_building_placed() -> void:
 	pass

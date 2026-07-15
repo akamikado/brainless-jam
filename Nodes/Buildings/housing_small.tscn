@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bf0m0hcy1ftn2"]
 
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="1_7ix8p"]
+[ext_resource type="Script" uid="uid://b35yw7eckefc0" path="res://Nodes/Buildings/housing_small.gd" id="2_chy8y"]
 [ext_resource type="Texture2D" uid="uid://dslqgmlrun3c1" path="res://Assets/Buildings/house-small.png" id="3_levfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x2g0"]
 size = Vector2(26, 12)
 
 [node name="Building" unique_id=1441197407 instance=ExtResource("1_7ix8p")]
+script = ExtResource("2_chy8y")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1993258573]
 texture = ExtResource("3_levfu")

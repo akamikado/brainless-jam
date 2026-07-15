@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cct0gbf2i4fj"]
+
+[ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="1_xmln4"]
+[ext_resource type="Script" uid="uid://dor4qgxetkyqr" path="res://Nodes/Buildings/pebble_building.gd" id="2_kxmue"]
+[ext_resource type="Texture2D" uid="uid://b43jfn5ynaklh" path="res://Assets/Buildings/pebble-building.png" id="2_xmln4"]
+
+[node name="Building" unique_id=1441197407 instance=ExtResource("1_xmln4")]
+script = ExtResource("2_kxmue")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1993258573]
+texture = ExtResource("2_xmln4")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1210385499) index="0" unique_id=364388442]
+position = Vector2(0, 1.9999995)
+scale = Vector2(0.6399991, 0.59999967)

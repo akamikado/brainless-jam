@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://c2ovg5ab0reaq" path="res://Nodes/building_select_button.tscn" id="2_cghn4"]
 [ext_resource type="Texture2D" uid="uid://carm4wbtcye53" path="res://Assets/Buildings/nectar-building.png" id="3_ieb2v"]
 [ext_resource type="Texture2D" uid="uid://c23xpheiintxx" path="res://Assets/Buildings/silk-building.png" id="4_jsf6t"]
+[ext_resource type="Texture2D" uid="uid://c732afrkcb80q" path="res://Assets/Buildings/stick-building.png" id="5_ieb2v"]
+[ext_resource type="Texture2D" uid="uid://b43jfn5ynaklh" path="res://Assets/Buildings/pebble-building.png" id="6_jsf6t"]
+[ext_resource type="Texture2D" uid="uid://dslqgmlrun3c1" path="res://Assets/Buildings/house-small.png" id="7_pyc1g"]
 
 [node name="BuildingSelectionArea" type="Node2D" unique_id=1568335877]
 script = ExtResource("1_eew2j")
@@ -22,7 +25,37 @@ offset_bottom = 81.0
 offset_transform_position = Vector2(0, 0)
 toggle_mode = true
 texture_normal = ExtResource("4_jsf6t")
-building_type = 2
+building_type = 3
+
+[node name="StickBuilding" parent="." unique_id=440608842 instance=ExtResource("2_cghn4")]
+offset_top = 64.99999
+offset_right = 48.0
+offset_bottom = 113.0
+offset_transform_position = Vector2(0, 0)
+toggle_mode = true
+texture_normal = ExtResource("5_ieb2v")
+building_type = 4
+
+[node name="PebbleBuilding" parent="." unique_id=1201683439 instance=ExtResource("2_cghn4")]
+offset_top = 96.999985
+offset_right = 48.0
+offset_bottom = 145.0
+offset_transform_position = Vector2(0, 0)
+toggle_mode = true
+texture_normal = ExtResource("6_jsf6t")
+building_type = 5
+
+[node name="HousingSmall" parent="." unique_id=1007553452 instance=ExtResource("2_cghn4")]
+offset_top = 128.99997
+offset_right = 48.0
+offset_bottom = 176.99998
+offset_transform_position = Vector2(0, 0)
+toggle_mode = true
+texture_normal = ExtResource("7_pyc1g")
+building_type = 6
 
 [connection signal="selected" from="NectarGarden" to="." method="_on_building_select_button_toggled"]
 [connection signal="selected" from="SilkWeaver" to="." method="_on_building_select_button_toggled"]
+[connection signal="selected" from="StickBuilding" to="." method="_on_building_select_button_toggled"]
+[connection signal="selected" from="PebbleBuilding" to="." method="_on_building_select_button_toggled"]
+[connection signal="selected" from="HousingSmall" to="." method="_on_building_select_button_toggled"]

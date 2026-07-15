@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://ggmcpnn3galv"]
 
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="1_ugmgo"]
+[ext_resource type="Script" uid="uid://cq5aj8uwu0ys2" path="res://Nodes/Buildings/nectar_building.gd" id="2_i06ip"]
 [ext_resource type="Texture2D" uid="uid://carm4wbtcye53" path="res://Assets/Buildings/nectar-building.png" id="2_n0lok"]
 
 [node name="Building" unique_id=1441197407 instance=ExtResource("1_ugmgo")]
+script = ExtResource("2_i06ip")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1993258573]
 texture = ExtResource("2_n0lok")
