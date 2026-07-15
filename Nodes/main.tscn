@@ -9,13 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://dpd7181jvetxr" path="res://Nodes/UI/gameplay-ui.tscn" id="6_c08q2"]
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="7_ye5tp"]
 [ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
+[ext_resource type="AudioStream" uid="uid://dd2lvtfudf3v0" path="res://Assets/Sounds/PlaceBuilding.mp3" id="10_ii7ua"]
+[ext_resource type="AudioStream" uid="uid://if73gl0h20vy" path="res://Assets/Sounds/CantPlace.mp3" id="11_kqcq1"]
+[ext_resource type="AudioStream" uid="uid://cmikogaawd1ql" path="res://Assets/Sounds/Theme.mp3" id="12_kqcq1"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
 
 [node name="Map" parent="." unique_id=826473319 instance=ExtResource("3_cfxlj")]
-position = Vector2(24, 163)
 
 [node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
 texture_filter = 1
@@ -23,26 +25,43 @@ position = Vector2(368, 221)
 texture = ExtResource("5_r680b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=156765559]
+position = Vector2(600, 600)
+zoom = Vector2(0.5, 0.5)
+limit_left = -100
+limit_top = -100
+limit_right = 1300
+limit_bottom = 1300
+editor_draw_limits = true
 script = ExtResource("5_c08q2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981370967]
 
 [node name="GameplayUi" parent="CanvasLayer" unique_id=660287611 instance=ExtResource("6_c08q2")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
-position = Vector2(225, 50)
-scale = Vector2(0.8, 0.8)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 0
 
 [node name="Buildings" type="Node" parent="." unique_id=2055413477]
 script = ExtResource("8_ws7ns")
 
 [node name="SelectedBuilding" parent="." unique_id=1441197407 instance=ExtResource("7_ye5tp")]
 script = ExtResource("4_uxqe4")
+
+[node name="PlaceBuildingSound" type="AudioStreamPlayer" parent="SelectedBuilding" unique_id=594945056]
+stream = ExtResource("10_ii7ua")
+
+[node name="CantPlace" type="AudioStreamPlayer" parent="SelectedBuilding" unique_id=1914994451]
+stream = ExtResource("11_kqcq1")
+
+[node name="Theme" type="AudioStreamPlayer" parent="." unique_id=271650656]
+stream = ExtResource("12_kqcq1")
+volume_db = -6.985
+autoplay = true
+parameters/looping = true
 
 [connection signal="selected_building" from="CanvasLayer/BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
 [connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building"]

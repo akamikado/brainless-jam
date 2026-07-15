@@ -13,7 +13,6 @@ z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(5.9604645e-08, -4.7683716e-07)
-scale = Vector2(0.6, 0.6)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1210385499]
 
