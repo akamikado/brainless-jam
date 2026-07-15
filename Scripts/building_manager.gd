@@ -1,15 +1,13 @@
 extends Node
 
-@export var secondsPerUpdate = 1
-var timer: float = 0
+@onready var map = $"../Map"
 
 func _ready() -> void:
 	pass
 
-
 func _process(delta: float) -> void:
-	timer += delta
-	if timer > secondsPerUpdate:
-		for child in get_children():
-			child.update_building()
 	pass
+
+func _on_timer_cycle_passed() -> void:
+	for building in map.buildings:
+		building.update_state()

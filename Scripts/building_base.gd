@@ -1,8 +1,5 @@
 class_name Base extends Node2D
 
-<<<<<<< Updated upstream
-@export var tiles_occupying: Vector2
-=======
 @export var foodRequired = 0
 @export var silkRequired = 0
 @export var stickRequired = 0
@@ -32,7 +29,6 @@ class_name Base extends Node2D
 @export var pebbleProductionInDrought = 0
 @export var pebbleProductionInWind = 0
 @export var pebbleProductionInCold = 0
->>>>>>> Stashed changes
 
 func on_placed() -> void:
 	Global.remove_food(foodRequired)
@@ -41,12 +37,8 @@ func on_placed() -> void:
 	Global.remove_pebbles(pebbleRequired)
 	Global.assign_citizens(citizenRequired)
 
-<<<<<<< Updated upstream
-func update_building() -> void:
-=======
 func update_state() -> void:
 	#TODO: match for every weather condition and do Global.add_<item>(<item>ProductionIn<weather>)
->>>>>>> Stashed changes
 	pass
 
 func nearby_building_placed() -> void:
