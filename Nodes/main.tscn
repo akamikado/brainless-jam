@@ -12,6 +12,56 @@
 [ext_resource type="AudioStream" uid="uid://dd2lvtfudf3v0" path="res://Assets/Sounds/PlaceBuilding.mp3" id="10_ii7ua"]
 [ext_resource type="AudioStream" uid="uid://if73gl0h20vy" path="res://Assets/Sounds/CantPlace.mp3" id="11_kqcq1"]
 [ext_resource type="AudioStream" uid="uid://cmikogaawd1ql" path="res://Assets/Sounds/Theme.mp3" id="12_kqcq1"]
+[ext_resource type="Texture2D" uid="uid://wdls5j2r7p6v" path="res://Assets/Animations/rain/rain-overlay1.png" id="13_s5jxy"]
+[ext_resource type="Texture2D" uid="uid://cahwekb47b0dl" path="res://Assets/Animations/rain/rain-overlay2.png" id="14_i4233"]
+[ext_resource type="Texture2D" uid="uid://cyq7wio4mbup1" path="res://Assets/Animations/rain/rain-overlay3.png" id="15_ookn0"]
+[ext_resource type="Texture2D" uid="uid://uefog3jh3xde" path="res://Assets/Animations/rain/rain-overlay4.png" id="16_0t0ti"]
+[ext_resource type="Texture2D" uid="uid://bcat7i1h4a7gp" path="res://Assets/Animations/rain/rain-overlay5.png" id="17_8bico"]
+[ext_resource type="Texture2D" uid="uid://dth8kwximmlt2" path="res://Assets/Animations/rain/rain-overlay6.png" id="18_nt3ay"]
+[ext_resource type="Texture2D" uid="uid://btycsp7pdqejh" path="res://Assets/Animations/rain/rain-overlay7.png" id="19_hwfm0"]
+
+[sub_resource type="Animation" id="Animation_q8121"]
+resource_name = "rain"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ito5"]
+_data = {
+&"rain": SubResource("Animation_q8121")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kw3xs"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_s5jxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i4233")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ookn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0t0ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8bico")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nt3ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hwfm0")
+}],
+"loop": 1,
+"name": &"rain",
+"speed": 14.0
+}]
 
 [node name="Main" type="Node2D" unique_id=197731329]
 script = ExtResource("2_cfxlj")
@@ -37,13 +87,26 @@ script = ExtResource("5_c08q2")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981370967]
 
 [node name="GameplayUi" parent="CanvasLayer" unique_id=660287611 instance=ExtResource("6_c08q2")]
+z_index = 1
 
 [node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
+z_index = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1560110690]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_6ito5")
+
+[node name="rain" type="AnimatedSprite2D" parent="CanvasLayer/AnimationPlayer" unique_id=1900376204]
+position = Vector2(144, 81)
+sprite_frames = SubResource("SpriteFrames_kw3xs")
+animation = &"rain"
+autoplay = "rain"
+frame_progress = 0.42195156
 
 [node name="Buildings" type="Node" parent="." unique_id=2055413477]
 script = ExtResource("8_ws7ns")
