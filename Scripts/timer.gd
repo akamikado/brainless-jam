@@ -13,7 +13,6 @@ func _ready() -> void:
 	
 func _on_timeout() -> void:
 	cycle += 1
-	print(cycle)
 	if cycle % cyclesPerWeather == 0:
 		weather_passed.emit()
 	else:
