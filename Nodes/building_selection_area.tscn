@@ -16,20 +16,33 @@ mouse_filter = 2
 script = ExtResource("1_eew2j")
 metadata/_edit_group_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1335881819]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -29.0
-offset_top = -28.0
-offset_right = 19.0
-offset_bottom = 72.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
+[node name="Background" type="Sprite2D" parent="." unique_id=1655002680]
+scale = Vector2(0.919, 1.25)
+texture = ExtResource("2_rvqud")
+
+[node name="Label" type="Sprite2D" parent="." unique_id=1436682699]
+position = Vector2(4, -76)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_tf4qr")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1849205087]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -59.999996
+offset_right = 17.0
+scale = Vector2(1.3600007, 2.5999985)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer" unique_id=1936338775]
+custom_minimum_size = Vector2(40, 60)
+layout_mode = 2
+mouse_filter = 0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/ScrollContainer" unique_id=770471454]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_constants/v_separation = 4
 
 [node name="NectarGarden" parent="VBoxContainer" unique_id=679507329 instance=ExtResource("2_cghn4")]
 layout_mode = 2
