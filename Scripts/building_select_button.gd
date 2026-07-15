@@ -5,8 +5,6 @@ signal selected
 
 func _toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		# TODO: check if enough resources are available to select this building
 		selected.emit(building_type)
-		set_pressed_no_signal(false)
 	else:
 		selected.emit(Global.HousingType.NONE)
