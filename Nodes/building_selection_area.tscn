@@ -30,6 +30,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_tf4qr")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1849205087]
+layout_mode = 0
 offset_left = -23.0
 offset_top = -59.999996
 offset_right = 17.0

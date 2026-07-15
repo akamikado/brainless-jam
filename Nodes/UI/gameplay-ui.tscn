@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dpd7181jvetxr"]
 
-[ext_resource type="Script" uid="uid://cwk7qwnxsk5i2" path="res://Scripts/UI/food_text.gd" id="2_b0tf6"]
 [ext_resource type="Texture2D" uid="uid://b7lamkh3fx2pk" path="res://Assets/UI/top-banner.png" id="2_hn4wr"]
 [ext_resource type="FontFile" uid="uid://dnpi8rrgeorh4" path="res://Assets/Minecraft.ttf" id="2_tlpeg"]
 [ext_resource type="Script" uid="uid://cp1ixlxuvm2uv" path="res://Scripts/UI/sticks_text.gd" id="3_hn4wr"]
@@ -16,73 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Control" type="Control" parent="." unique_id=1293992010]
-anchors_preset = 0
-offset_top = 2.0
-offset_right = 40.0
-offset_bottom = 42.0
-
-[node name="Food Text" type="RichTextLabel" parent="Control" unique_id=986253165]
-z_index = 1
-texture_filter = 1
-texture = ExtResource("2_hn4wr")
-centered = false
-
-[node name="Text" type="Control" parent="." unique_id=1927819212]
-anchors_preset = 0
-
-[node name="Food Text" type="RichTextLabel" parent="Text" unique_id=986253165]
-texture_filter = 1
-layout_mode = 0
-offset_left = 17.0
-offset_top = 4.0
-offset_right = 46.0
-offset_bottom = 23.0
-scale = Vector2(0.5, 0.5)
-offset_transform_position = Vector2(17, 4)
-theme_override_fonts/normal_font = ExtResource("2_tlpeg")
-text = "00"
-script = ExtResource("2_b0tf6")
-
-[node name="Sticks Text" type="RichTextLabel" parent="Control" unique_id=711503813]
-z_index = 1
-texture_filter = 1
-layout_mode = 0
-offset_left = 40.0
-offset_top = 4.0
-offset_right = 79.0
-offset_bottom = 23.0
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/normal_font = ExtResource("2_tlpeg")
-text = "00"
-script = ExtResource("3_hn4wr")
-
-[node name="Silk Text" type="RichTextLabel" parent="Control" unique_id=262342931]
-z_index = 1
-texture_filter = 1
-layout_mode = 0
-offset_left = 64.0
-offset_top = 4.0
-offset_right = 112.0
-offset_bottom = 23.0
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/normal_font = ExtResource("2_tlpeg")
-text = "00"
-script = ExtResource("5_kh5ah")
-
-[node name="Pebbles Text" type="RichTextLabel" parent="Control" unique_id=932476340]
-z_index = 1
-texture_filter = 1
-layout_mode = 0
-offset_left = 89.0
-offset_top = 4.0
-offset_right = 152.0
-offset_bottom = 23.0
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/normal_font = ExtResource("2_tlpeg")
-text = "00"
-script = ExtResource("6_sjs6l")
-
 [node name="TextureRect" type="TextureRect" parent="." unique_id=541747682]
 texture_filter = 1
 layout_mode = 1
@@ -91,3 +23,55 @@ anchor_right = 1.0
 offset_bottom = 21.98
 grow_horizontal = 2
 texture = ExtResource("2_hn4wr")
+
+[node name="Food Text" type="RichTextLabel" parent="." unique_id=1350747300]
+z_index = 1
+texture_filter = 1
+layout_mode = 1
+offset_left = 23.0
+offset_top = 6.0
+offset_right = 86.0
+offset_bottom = 25.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("2_tlpeg")
+text = "0"
+script = ExtResource("6_sjs6l")
+
+[node name="Silk Text" type="RichTextLabel" parent="." unique_id=262342931]
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 88.0
+offset_top = 6.0
+offset_right = 136.0
+offset_bottom = 25.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("2_tlpeg")
+text = "0"
+script = ExtResource("5_kh5ah")
+
+[node name="Pebbles Text" type="RichTextLabel" parent="." unique_id=932476340]
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 124.0
+offset_top = 6.0
+offset_right = 187.0
+offset_bottom = 25.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("2_tlpeg")
+text = "0"
+script = ExtResource("6_sjs6l")
+
+[node name="Sticks Text" type="RichTextLabel" parent="." unique_id=711503813]
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 55.0
+offset_top = 6.0
+offset_right = 94.0
+offset_bottom = 25.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("2_tlpeg")
+text = "0"
+script = ExtResource("3_hn4wr")

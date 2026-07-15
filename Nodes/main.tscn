@@ -7,11 +7,11 @@
 [ext_resource type="Script" uid="uid://d1v4k2yawop8o" path="res://Scripts/camera-controls.gd" id="5_c08q2"]
 [ext_resource type="PackedScene" uid="uid://dpd7181jvetxr" path="res://Nodes/UI/gameplay-ui.tscn" id="6_c08q2"]
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="7_ye5tp"]
+[ext_resource type="Script" uid="uid://d00cygy4mhssu" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
 [ext_resource type="AudioStream" uid="uid://dd2lvtfudf3v0" path="res://Assets/Sounds/PlaceBuilding.mp3" id="10_ii7ua"]
+[ext_resource type="Script" uid="uid://nmu88oxb7nwy" path="res://Scripts/timer.gd" id="10_xowla"]
 [ext_resource type="AudioStream" uid="uid://if73gl0h20vy" path="res://Assets/Sounds/CantPlace.mp3" id="11_kqcq1"]
 [ext_resource type="AudioStream" uid="uid://cmikogaawd1ql" path="res://Assets/Sounds/Theme.mp3" id="12_kqcq1"]
-[ext_resource type="Script" uid="uid://d00cygy4mhssu" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
-[ext_resource type="Script" uid="uid://nmu88oxb7nwy" path="res://Scripts/timer.gd" id="10_xowla"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
 script = ExtResource("2_cfxlj")
@@ -35,13 +35,16 @@ script = ExtResource("5_c08q2")
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 17.0
-offset_right = 17.0
+offset_left = 125.0
+offset_right = 125.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
-position = Vector2(261, 81)
+offset_left = 261.0
+offset_top = 81.0
+offset_right = 261.0
+offset_bottom = 81.0
 scale = Vector2(0.8, 0.8)
 
 [node name="Building Manager" type="Node" parent="." unique_id=2055413477]

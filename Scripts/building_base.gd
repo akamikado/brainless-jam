@@ -25,7 +25,6 @@ class_name Base extends Node2D
 @export var pebbleProductionInCold = 0
 
 func on_placed() -> void:
-# TODO: use materials and do sound effect
 	pass
 
 func update_state() -> void:
