@@ -9,11 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dpd7181jvetxr" path="res://Nodes/UI/gameplay-ui.tscn" id="6_c08q2"]
 [ext_resource type="Texture2D" uid="uid://dnmvrq70i5aop" path="res://Assets/Animations/wind/wind1.png" id="7_s5jxy"]
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="7_ye5tp"]
-
 [ext_resource type="Texture2D" uid="uid://dpe6w7fmugc70" path="res://Assets/Animations/wind/wind2.png" id="8_i4233"]
+[ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
 [ext_resource type="Texture2D" uid="uid://cxwg4octbk3i4" path="res://Assets/Animations/wind/wind3.png" id="9_ookn0"]
 [ext_resource type="Texture2D" uid="uid://cwm0fh0mv6460" path="res://Assets/Animations/wind/wind4.png" id="10_0t0ti"]
+[ext_resource type="AudioStream" uid="uid://dd2lvtfudf3v0" path="res://Assets/Sounds/PlaceBuilding.mp3" id="10_ii7ua"]
 [ext_resource type="Texture2D" uid="uid://b8s31f2el7rw3" path="res://Assets/Animations/wind/wind5.png" id="11_8bico"]
+[ext_resource type="AudioStream" uid="uid://if73gl0h20vy" path="res://Assets/Sounds/CantPlace.mp3" id="11_kqcq1"]
+[ext_resource type="AudioStream" uid="uid://cmikogaawd1ql" path="res://Assets/Sounds/Theme.mp3" id="12_kqcq1"]
 [ext_resource type="Texture2D" uid="uid://gjfb0ajxcp5t" path="res://Assets/Animations/wind/wind6.png" id="12_nt3ay"]
 [ext_resource type="Texture2D" uid="uid://duj880orps38r" path="res://Assets/Animations/wind/wind7.png" id="13_hwfm0"]
 [ext_resource type="Texture2D" uid="uid://wdls5j2r7p6v" path="res://Assets/Animations/rain/rain-overlay1.png" id="13_s5jxy"]
@@ -157,12 +160,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[ext_resource type="Script" uid="uid://d00cygy4mhssu" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
-[ext_resource type="AudioStream" uid="uid://dd2lvtfudf3v0" path="res://Assets/Sounds/PlaceBuilding.mp3" id="10_ii7ua"]
-[ext_resource type="Script" uid="uid://nmu88oxb7nwy" path="res://Scripts/timer.gd" id="10_xowla"]
-[ext_resource type="AudioStream" uid="uid://if73gl0h20vy" path="res://Assets/Sounds/CantPlace.mp3" id="11_kqcq1"]
-[ext_resource type="AudioStream" uid="uid://cmikogaawd1ql" path="res://Assets/Sounds/Theme.mp3" id="12_kqcq1"]
-
 [node name="Main" type="Node2D" unique_id=197731329]
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
@@ -187,20 +184,15 @@ script = ExtResource("5_c08q2")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981370967]
 
 [node name="GameplayUi" parent="CanvasLayer" unique_id=660287611 instance=ExtResource("6_c08q2")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 125.0
-offset_right = 125.0
-grow_horizontal = 1
-grow_vertical = 1
+z_index = 1
 
 [node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
-offset_left = 261.0
-offset_top = 81.0
-offset_right = 261.0
-offset_bottom = 81.0
-scale = Vector2(0.8, 0.8)
+z_index = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 0
 
 [node name="WeatherAnimation" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=812218320]
 texture_filter = 1
