@@ -2,7 +2,6 @@ extends Node2D
 
 signal place_building
 
-
 var ant_hatchery_texture = load("res://Assets/Buildings/ant-hatchery.png")
 var nectar_garden_texture = load("res://Assets/Buildings/nectar-building.png")
 
@@ -36,11 +35,9 @@ func _input(event: InputEvent) -> void:
 		if map_rect.encloses(area_rect) and not overlapping_building_on_map:
 			place_building.emit(housing_type, global_position)
 			place_sound.play()
-			housing_type = Global.HousingType.NONE
-			$Sprite2D.visible = false
 		else:
 			cant_place.play()
-		
+			
 		
 func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position().snapped(Vector2(16,16))

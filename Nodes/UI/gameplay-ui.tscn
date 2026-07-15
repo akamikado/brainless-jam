@@ -25,21 +25,12 @@ offset_bottom = 42.0
 [node name="Food Text" type="RichTextLabel" parent="Control" unique_id=986253165]
 z_index = 1
 texture_filter = 1
-texture = ExtResource("2_hn4wr")
-centered = false
-
-[node name="Text" type="Control" parent="." unique_id=1927819212]
-anchors_preset = 0
-
-[node name="Food Text" type="RichTextLabel" parent="Text" unique_id=986253165]
-texture_filter = 1
 layout_mode = 0
-offset_left = 17.0
+offset_left = 24.0
 offset_top = 4.0
 offset_right = 46.0
 offset_bottom = 23.0
 scale = Vector2(0.5, 0.5)
-offset_transform_position = Vector2(17, 4)
 theme_override_fonts/normal_font = ExtResource("2_tlpeg")
 text = "00"
 script = ExtResource("2_b0tf6")
@@ -48,7 +39,7 @@ script = ExtResource("2_b0tf6")
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = 40.0
+offset_left = 57.0
 offset_top = 4.0
 offset_right = 79.0
 offset_bottom = 23.0
@@ -61,7 +52,7 @@ script = ExtResource("3_hn4wr")
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = 64.0
+offset_left = 90.0
 offset_top = 4.0
 offset_right = 112.0
 offset_bottom = 23.0
@@ -74,7 +65,7 @@ script = ExtResource("5_kh5ah")
 z_index = 1
 texture_filter = 1
 layout_mode = 0
-offset_left = 89.0
+offset_left = 130.0
 offset_top = 4.0
 offset_right = 152.0
 offset_bottom = 23.0

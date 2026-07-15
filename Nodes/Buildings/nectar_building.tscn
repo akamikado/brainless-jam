@@ -6,8 +6,8 @@
 [node name="Building" unique_id=1441197407 instance=ExtResource("1_ugmgo")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1993258573]
+scale = Vector2(1, 1)
 texture = ExtResource("2_n0lok")
 
 [node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1210385499) index="0" unique_id=364388442]
-position = Vector2(-1.7881393e-07, 7.0000005)
-scale = Vector2(0.76303697, 0.7070909)
+position = Vector2(0, 1.9999995)

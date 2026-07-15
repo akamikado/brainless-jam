@@ -21,12 +21,6 @@ func get_housing_texture_for_type(type: HousingType) -> String:
 			return "res://Assets/Buildings/ant-hatchery.png"
 		HousingType.NECTAR_GARDEN:
 			return "res://Assets/Buildings/nectar-building.png"
-		HousingType.SILK_WEAVER:
-			return "res://Assets/Buildings/silk-building.png"
-		HousingType.PEBBLE_QUARRY:
-			return "res://Assets/Buildings/pebble-building.png"
-		HousingType.STICK_YARD:
-			return "res://Assets/Buildings/stick-building.png"
 	
 	return ""
 
@@ -36,12 +30,6 @@ func get_housing_scene_for_type(type: HousingType) -> String:
 			return "res://Nodes/Buildings/building_base.tscn"
 		HousingType.NECTAR_GARDEN:
 			return "res://Nodes/Buildings/nectar_building.tscn"
-		HousingType.SILK_WEAVER:
-			return "res://Nodes/Buildings/silk_building.tscn"
-		HousingType.PEBBLE_QUARRY:
-			return "res://Nodes/Buildings/pebble_building.tscn"
-		HousingType.STICK_YARD:
-			return "res://Nodes/Buildings/stick_building.tscn"
 	
 	return ""
 
