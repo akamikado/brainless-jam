@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dsmcijgwbml0a" path="res://Scripts/building_selection_area.gd" id="1_eew2j"]
 [ext_resource type="PackedScene" uid="uid://c2ovg5ab0reaq" path="res://Nodes/building_select_button.tscn" id="2_cghn4"]
+[ext_resource type="Texture2D" uid="uid://ctrxnnpip2crr" path="res://Assets/UI/build-menu-bg.png" id="2_rvqud"]
 [ext_resource type="Texture2D" uid="uid://carm4wbtcye53" path="res://Assets/Buildings/nectar-building.png" id="3_ieb2v"]
+[ext_resource type="Texture2D" uid="uid://ddhxx8qehva63" path="res://Assets/UI/leaf.png" id="3_tf4qr"]
+[ext_resource type="Texture2D" uid="uid://qi7ymmb5e0id" path="res://Assets/UI/Panels/building-panel.png" id="4_ieb2v"]
 [ext_resource type="Texture2D" uid="uid://c23xpheiintxx" path="res://Assets/Buildings/silk-building.png" id="4_jsf6t"]
+[ext_resource type="Texture2D" uid="uid://b43jfn5ynaklh" path="res://Assets/Buildings/pebble-building.png" id="8_jsf6t"]
+[ext_resource type="Texture2D" uid="uid://c732afrkcb80q" path="res://Assets/Buildings/stick-building.png" id="9_pyc1g"]
 
 [node name="BuildingSelectionArea" type="Control" unique_id=425353733]
 layout_mode = 3
@@ -14,36 +19,127 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_eew2j")
-metadata/_edit_group_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1335881819]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -29.0
-offset_top = -28.0
-offset_right = 19.0
-offset_bottom = 72.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.6, 0.6)
+[node name="Background" type="Sprite2D" parent="." unique_id=1655002680]
+scale = Vector2(0.919, 1.25)
+texture = ExtResource("2_rvqud")
 
-[node name="NectarGarden" parent="VBoxContainer" unique_id=679507329 instance=ExtResource("2_cghn4")]
+[node name="Label" type="Sprite2D" parent="." unique_id=1436682699]
+position = Vector2(4, -76)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_tf4qr")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1849205087]
+offset_left = -23.0
+offset_top = -59.999996
+offset_right = 17.0
+scale = Vector2(1.3600007, 2.5999985)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer" unique_id=1936338775]
+custom_minimum_size = Vector2(40, 60)
 layout_mode = 2
+mouse_filter = 0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/ScrollContainer" unique_id=770471454]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_constants/v_separation = 4
+
+[node name="Nectar Building" type="Control" parent="CenterContainer/ScrollContainer/GridContainer" unique_id=854926216]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Info Panel" type="Sprite2D" parent="CenterContainer/ScrollContainer/GridContainer/Nectar Building" unique_id=370089071]
+position = Vector2(-1.7881393e-07, 0.38461414)
+scale = Vector2(0.7937196, 0.4316778)
+texture = ExtResource("4_ieb2v")
+centered = false
+
+[node name="TextureButton" parent="CenterContainer/ScrollContainer/GridContainer/Nectar Building" unique_id=773587996 instance=ExtResource("2_cghn4")]
+layout_mode = 0
+offset_left = 16.176462
+offset_top = 2.6923075
+offset_right = 64.17647
+offset_bottom = 50.692307
+scale = Vector2(0.4348649, 0.22698706)
 offset_transform_position = Vector2(0, 0)
 toggle_mode = true
 texture_normal = ExtResource("3_ieb2v")
+ignore_texture_size = true
 building_type = 2
 
-[node name="SilkWeaver" parent="VBoxContainer" unique_id=1643222114 instance=ExtResource("2_cghn4")]
+[node name="Silk Building" type="Control" parent="CenterContainer/ScrollContainer/GridContainer" unique_id=501673690]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+
+[node name="Info Panel" type="Sprite2D" parent="CenterContainer/ScrollContainer/GridContainer/Silk Building" unique_id=355676419]
+position = Vector2(-1.7881393e-07, 0.38461414)
+scale = Vector2(0.7937196, 0.4316778)
+texture = ExtResource("4_ieb2v")
+centered = false
+
+[node name="TextureButton" parent="CenterContainer/ScrollContainer/GridContainer/Silk Building" unique_id=1348478701 instance=ExtResource("2_cghn4")]
+layout_mode = 0
+offset_left = 16.176462
+offset_top = 2.6923075
+offset_right = 64.17647
+offset_bottom = 50.692307
+scale = Vector2(0.4348649, 0.22698706)
 offset_transform_position = Vector2(0, 0)
 toggle_mode = true
 texture_normal = ExtResource("4_jsf6t")
-building_type = 2
+ignore_texture_size = true
+building_type = 3
 
-[connection signal="selected" from="VBoxContainer/NectarGarden" to="." method="_on_building_select_button_toggled"]
-[connection signal="selected" from="VBoxContainer/SilkWeaver" to="." method="_on_building_select_button_toggled"]
+[node name="Pebble Building" type="Control" parent="CenterContainer/ScrollContainer/GridContainer" unique_id=753831338]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Info Panel" type="Sprite2D" parent="CenterContainer/ScrollContainer/GridContainer/Pebble Building" unique_id=1012032489]
+position = Vector2(-1.7881393e-07, 0.38461414)
+scale = Vector2(0.7937196, 0.4316778)
+texture = ExtResource("4_ieb2v")
+centered = false
+
+[node name="TextureButton" parent="CenterContainer/ScrollContainer/GridContainer/Pebble Building" unique_id=489973214 instance=ExtResource("2_cghn4")]
+layout_mode = 0
+offset_left = 16.176462
+offset_top = 2.6923075
+offset_right = 64.17647
+offset_bottom = 50.692307
+scale = Vector2(0.4348649, 0.22698706)
+offset_transform_position = Vector2(0, 0)
+toggle_mode = true
+texture_normal = ExtResource("8_jsf6t")
+ignore_texture_size = true
+building_type = 5
+
+[node name="Stick Building" type="Control" parent="CenterContainer/ScrollContainer/GridContainer" unique_id=1057968359]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="Info Panel" type="Sprite2D" parent="CenterContainer/ScrollContainer/GridContainer/Stick Building" unique_id=916996245]
+position = Vector2(-1.7881393e-07, 0.38461414)
+scale = Vector2(0.7937196, 0.4316778)
+texture = ExtResource("4_ieb2v")
+centered = false
+
+[node name="TextureButton" parent="CenterContainer/ScrollContainer/GridContainer/Stick Building" unique_id=1614111979 instance=ExtResource("2_cghn4")]
+layout_mode = 0
+offset_left = 16.176462
+offset_top = 2.6923075
+offset_right = 64.17647
+offset_bottom = 50.692307
+scale = Vector2(0.4348649, 0.22698706)
+offset_transform_position = Vector2(0, 0)
+toggle_mode = true
+texture_normal = ExtResource("9_pyc1g")
+ignore_texture_size = true
+building_type = 4
+
+[connection signal="selected" from="CenterContainer/ScrollContainer/GridContainer/Nectar Building/TextureButton" to="." method="_on_building_select_button_toggled"]
+[connection signal="selected" from="CenterContainer/ScrollContainer/GridContainer/Silk Building/TextureButton" to="." method="_on_building_select_button_toggled"]
+[connection signal="selected" from="CenterContainer/ScrollContainer/GridContainer/Pebble Building/TextureButton" to="." method="_on_building_select_button_toggled"]
+[connection signal="selected" from="CenterContainer/ScrollContainer/GridContainer/Stick Building/TextureButton" to="." method="_on_building_select_button_toggled"]

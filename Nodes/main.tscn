@@ -5,24 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://cgcubbantnypg" path="res://Nodes/map.tscn" id="3_cfxlj"]
 [ext_resource type="Script" uid="uid://etbcgscfypr5" path="res://Scripts/selected_building.gd" id="4_uxqe4"]
 [ext_resource type="Script" uid="uid://d1v4k2yawop8o" path="res://Scripts/camera-controls.gd" id="5_c08q2"]
-[ext_resource type="Texture2D" uid="uid://861c1oqi7cij" path="res://Assets/Buildings/buildings-tileset.png" id="5_r680b"]
 [ext_resource type="PackedScene" uid="uid://dpd7181jvetxr" path="res://Nodes/UI/gameplay-ui.tscn" id="6_c08q2"]
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="7_ye5tp"]
-[ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
 [ext_resource type="AudioStream" uid="uid://dd2lvtfudf3v0" path="res://Assets/Sounds/PlaceBuilding.mp3" id="10_ii7ua"]
 [ext_resource type="AudioStream" uid="uid://if73gl0h20vy" path="res://Assets/Sounds/CantPlace.mp3" id="11_kqcq1"]
 [ext_resource type="AudioStream" uid="uid://cmikogaawd1ql" path="res://Assets/Sounds/Theme.mp3" id="12_kqcq1"]
+[ext_resource type="Script" uid="uid://d00cygy4mhssu" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
+[ext_resource type="Script" uid="uid://nmu88oxb7nwy" path="res://Scripts/timer.gd" id="10_xowla"]
 
 [node name="Main" type="Node2D" unique_id=197731329]
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
 
 [node name="Map" parent="." unique_id=826473319 instance=ExtResource("3_cfxlj")]
-
-[node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
-texture_filter = 1
-position = Vector2(368, 221)
-texture = ExtResource("5_r680b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=156765559]
 position = Vector2(600, 600)
@@ -37,15 +32,19 @@ script = ExtResource("5_c08q2")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981370967]
 
 [node name="GameplayUi" parent="CanvasLayer" unique_id=660287611 instance=ExtResource("6_c08q2")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 17.0
+offset_right = 17.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 0
+position = Vector2(261, 81)
+scale = Vector2(0.8, 0.8)
 
-[node name="Buildings" type="Node" parent="." unique_id=2055413477]
+[node name="Building Manager" type="Node" parent="." unique_id=2055413477]
 script = ExtResource("8_ws7ns")
 
 [node name="SelectedBuilding" parent="." unique_id=1441197407 instance=ExtResource("7_ye5tp")]
@@ -63,5 +62,11 @@ volume_db = -6.985
 autoplay = true
 parameters/looping = true
 
+[node name="Timer" type="Timer" parent="." unique_id=544256003]
+autostart = true
+script = ExtResource("10_xowla")
+
 [connection signal="selected_building" from="CanvasLayer/BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
 [connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building"]
+[connection signal="cycle_passed" from="Timer" to="Building Manager" method="_on_timer_cycle_passed"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
