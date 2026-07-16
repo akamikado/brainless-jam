@@ -5,24 +5,166 @@
 [ext_resource type="PackedScene" uid="uid://cgcubbantnypg" path="res://Nodes/map.tscn" id="3_cfxlj"]
 [ext_resource type="Script" uid="uid://etbcgscfypr5" path="res://Scripts/selected_building.gd" id="4_uxqe4"]
 [ext_resource type="Script" uid="uid://d1v4k2yawop8o" path="res://Scripts/camera-controls.gd" id="5_c08q2"]
-[ext_resource type="Texture2D" uid="uid://861c1oqi7cij" path="res://Assets/Buildings/buildings-tileset.png" id="5_r680b"]
 [ext_resource type="PackedScene" uid="uid://dpd7181jvetxr" path="res://Nodes/UI/gameplay-ui.tscn" id="6_c08q2"]
+[ext_resource type="Texture2D" uid="uid://dnmvrq70i5aop" path="res://Assets/Animations/wind/wind1.png" id="7_s5jxy"]
 [ext_resource type="PackedScene" uid="uid://dv4ouyl3g4y1q" path="res://Nodes/Buildings/building_base.tscn" id="7_ye5tp"]
-[ext_resource type="Script" uid="uid://cv68vsywijpt4" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
+[ext_resource type="Texture2D" uid="uid://dpe6w7fmugc70" path="res://Assets/Animations/wind/wind2.png" id="8_i4233"]
+[ext_resource type="Script" uid="uid://d00cygy4mhssu" path="res://Scripts/building_manager.gd" id="8_ws7ns"]
+[ext_resource type="Texture2D" uid="uid://cxwg4octbk3i4" path="res://Assets/Animations/wind/wind3.png" id="9_ookn0"]
+[ext_resource type="Texture2D" uid="uid://cwm0fh0mv6460" path="res://Assets/Animations/wind/wind4.png" id="10_0t0ti"]
 [ext_resource type="AudioStream" uid="uid://dd2lvtfudf3v0" path="res://Assets/Sounds/PlaceBuilding.mp3" id="10_ii7ua"]
+[ext_resource type="Script" uid="uid://nmu88oxb7nwy" path="res://Scripts/timer.gd" id="10_xowla"]
+[ext_resource type="Texture2D" uid="uid://b8s31f2el7rw3" path="res://Assets/Animations/wind/wind5.png" id="11_8bico"]
 [ext_resource type="AudioStream" uid="uid://if73gl0h20vy" path="res://Assets/Sounds/CantPlace.mp3" id="11_kqcq1"]
 [ext_resource type="AudioStream" uid="uid://cmikogaawd1ql" path="res://Assets/Sounds/Theme.mp3" id="12_kqcq1"]
+[ext_resource type="Texture2D" uid="uid://gjfb0ajxcp5t" path="res://Assets/Animations/wind/wind6.png" id="12_nt3ay"]
+[ext_resource type="Texture2D" uid="uid://duj880orps38r" path="res://Assets/Animations/wind/wind7.png" id="13_hwfm0"]
+[ext_resource type="Texture2D" uid="uid://wdls5j2r7p6v" path="res://Assets/Animations/rain/rain-overlay1.png" id="13_s5jxy"]
+[ext_resource type="Texture2D" uid="uid://dakmscmw6eti4" path="res://Assets/Animations/snow/snow-overlay1.png" id="14_5da7g"]
+[ext_resource type="Texture2D" uid="uid://cahwekb47b0dl" path="res://Assets/Animations/rain/rain-overlay2.png" id="14_i4233"]
+[ext_resource type="Texture2D" uid="uid://bdgf1fu5qmjmr" path="res://Assets/Animations/snow/snow-overlay2.png" id="15_bvjpq"]
+[ext_resource type="Texture2D" uid="uid://cyq7wio4mbup1" path="res://Assets/Animations/rain/rain-overlay3.png" id="15_ookn0"]
+[ext_resource type="Texture2D" uid="uid://uefog3jh3xde" path="res://Assets/Animations/rain/rain-overlay4.png" id="16_0t0ti"]
+[ext_resource type="Texture2D" uid="uid://cgciy4ui1ql8x" path="res://Assets/Animations/snow/snow-overlay3.png" id="16_orcvs"]
+[ext_resource type="Texture2D" uid="uid://bcat7i1h4a7gp" path="res://Assets/Animations/rain/rain-overlay5.png" id="17_8bico"]
+[ext_resource type="Texture2D" uid="uid://jnlj36giwwip" path="res://Assets/Animations/snow/snow-overlay4.png" id="17_jwigx"]
+[ext_resource type="Texture2D" uid="uid://0j15nao3gu8y" path="res://Assets/Animations/snow/snow-overlay5.png" id="18_fh6n7"]
+[ext_resource type="Texture2D" uid="uid://dth8kwximmlt2" path="res://Assets/Animations/rain/rain-overlay6.png" id="18_nt3ay"]
+[ext_resource type="Texture2D" uid="uid://byp4p4rlujxyw" path="res://Assets/Animations/snow/snow-overlay6.png" id="19_g8g22"]
+[ext_resource type="Texture2D" uid="uid://btycsp7pdqejh" path="res://Assets/Animations/rain/rain-overlay7.png" id="19_hwfm0"]
+[ext_resource type="Texture2D" uid="uid://b3mll4l8vtir6" path="res://Assets/Animations/snow/snow-overlay7.png" id="20_ld6m5"]
+[ext_resource type="Texture2D" uid="uid://cyt6e03vsh080" path="res://Assets/Animations/snow/snow-overlay8.png" id="21_r0r7k"]
+[ext_resource type="Texture2D" uid="uid://bxso1a62v3bc1" path="res://Assets/Animations/snow/snow-overlay9.png" id="22_ifvuw"]
+[ext_resource type="Texture2D" uid="uid://bakjk0bwpl8uc" path="res://Assets/Animations/snow/snow-overlay10.png" id="23_6y4yj"]
+[ext_resource type="Texture2D" uid="uid://3xuppikdqo7l" path="res://Assets/Animations/snow/snow-overlay11.png" id="24_6vba8"]
+[ext_resource type="Texture2D" uid="uid://dsvnuek5udpkb" path="res://Assets/Animations/snow/snow-overlay12.png" id="25_p074s"]
+[ext_resource type="Texture2D" uid="uid://dm6acxqxost52" path="res://Assets/Animations/drought/drought1.png" id="26_g8g22"]
+[ext_resource type="Texture2D" uid="uid://bg80ami4weeya" path="res://Assets/Animations/drought/drought2.png" id="27_ld6m5"]
+[ext_resource type="Texture2D" uid="uid://c751my08gdd1a" path="res://Assets/Animations/drought/drought3.png" id="28_r0r7k"]
+[ext_resource type="Texture2D" uid="uid://b5kcb6dx27lg4" path="res://Assets/Animations/drought/drought4.png" id="29_ifvuw"]
+[ext_resource type="Texture2D" uid="uid://bxi817pre2t0" path="res://Assets/Animations/drought/drought5.png" id="30_6y4yj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lg0oq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_g8g22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ld6m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_r0r7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ifvuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_6y4yj")
+}],
+"loop": 1,
+"name": &"drought",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_s5jxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_i4233")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ookn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0t0ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8bico")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nt3ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hwfm0")
+}],
+"loop": 1,
+"name": &"rain",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5da7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bvjpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_orcvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jwigx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fh6n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_g8g22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ld6m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r0r7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ifvuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_6y4yj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6vba8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_p074s")
+}],
+"loop": 1,
+"name": &"snow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_s5jxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i4233")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ookn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0t0ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8bico")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nt3ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hwfm0")
+}],
+"loop": 1,
+"name": &"wind",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D" unique_id=197731329]
 script = ExtResource("2_cfxlj")
 metadata/_edit_group_ = true
 
 [node name="Map" parent="." unique_id=826473319 instance=ExtResource("3_cfxlj")]
-
-[node name="BuildingsTileset" type="Sprite2D" parent="." unique_id=546614818]
-texture_filter = 1
-position = Vector2(368, 221)
-texture = ExtResource("5_r680b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=156765559]
 position = Vector2(600, 600)
@@ -37,15 +179,23 @@ script = ExtResource("5_c08q2")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1981370967]
 
 [node name="GameplayUi" parent="CanvasLayer" unique_id=660287611 instance=ExtResource("6_c08q2")]
+z_index = 1
+scale = Vector2(0.81035376, 0.8899135)
 
 [node name="BuildingSelectionArea" parent="CanvasLayer" unique_id=1568335877 instance=ExtResource("2_h2ymo")]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 0
+offset_left = 261.0
+offset_top = 81.0
+offset_right = 261.0
+offset_bottom = 81.0
+scale = Vector2(0.8, 0.8)
 
-[node name="Buildings" type="Node" parent="." unique_id=2055413477]
+[node name="WeatherAnimation" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=812218320]
+texture_filter = 1
+position = Vector2(144, 81)
+sprite_frames = SubResource("SpriteFrames_lg0oq")
+animation = &"drought"
+
+[node name="Building Manager" type="Node" parent="." unique_id=2055413477]
 script = ExtResource("8_ws7ns")
 
 [node name="SelectedBuilding" parent="." unique_id=1441197407 instance=ExtResource("7_ye5tp")]
@@ -63,5 +213,11 @@ volume_db = -6.985
 autoplay = true
 parameters/looping = true
 
+[node name="Timer" type="Timer" parent="." unique_id=544256003]
+autostart = true
+script = ExtResource("10_xowla")
+
 [connection signal="selected_building" from="CanvasLayer/BuildingSelectionArea" to="SelectedBuilding" method="_on_building_selection_area_selected_building"]
 [connection signal="place_building" from="SelectedBuilding" to="Map" method="_on_selected_building_place_building"]
+[connection signal="cycle_passed" from="Timer" to="Building Manager" method="_on_timer_cycle_passed"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
