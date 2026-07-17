@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://13kvawwwwl8y"]
+
+[ext_resource type="Texture2D" uid="uid://qi7ymmb5e0id" path="res://Assets/UI/Panels/building-panel.png" id="1_tq26u"]
+[ext_resource type="Texture2D" uid="uid://carm4wbtcye53" path="res://Assets/Buildings/nectar-building.png" id="3_qvsnp"]
+[ext_resource type="Script" uid="uid://cmnuo6lkqh128" path="res://Scripts/building_select_button.gd" id="3_tq26u"]
+
+[node name="Building" type="TextureRect" unique_id=651581924]
+offset_right = 51.0
+offset_bottom = 48.0
+texture = ExtResource("1_tq26u")
+
+[node name="Button" type="TextureButton" parent="." unique_id=1643222114]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 4.0
+offset_right = 59.884697
+offset_bottom = 52.815914
+scale = Vector2(0.6848528, 0.5735834)
+offset_transform_position = Vector2(-190, 0)
+texture_normal = ExtResource("3_qvsnp")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_tq26u")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

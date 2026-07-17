@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bkaxj0esfy37r"]
+
+[ext_resource type="Texture2D" uid="uid://ciw5eaoxpmgkv" path="res://Assets/UI/Panels/weather-panel.png" id="1_3xxrn"]
+[ext_resource type="Texture2D" uid="uid://b0c14krs8qer0" path="res://Assets/UI/Icons/weather-clear.png" id="2_yp33v"]
+
+[node name="CycleInfo" type="Control" unique_id=842898651]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1053621890]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3xxrn")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=259218625]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 24.0
+texture = ExtResource("2_yp33v")

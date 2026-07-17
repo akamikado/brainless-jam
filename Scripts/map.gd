@@ -10,6 +10,5 @@ func _on_selected_building_place_building(type: Global.HousingType, building_pos
 	
 	add_child(building)
 	buildings.append(building)
-	
-	building.on_placed()
+
 	
