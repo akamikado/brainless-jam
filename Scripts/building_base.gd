@@ -1,4 +1,4 @@
-class_name Base extends Node2D
+class_name Building extends Node2D
 
 @export var foodRequired = 0
 @export var silkRequired = 0
